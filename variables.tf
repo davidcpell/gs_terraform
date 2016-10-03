@@ -1,4 +1,6 @@
-variable "shared_credentials_file" {}
+variable "shared_credentials_file" {
+  default = "/Users/david/.aws/credentials"
+}
 
 variable "profile" {
   default = "default"
