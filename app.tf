@@ -1,12 +1,10 @@
-# need an IAM role for RDS
-
 resource "aws_launch_configuration" "lc" {
+  # need an IAM role for RDS
   name_prefix = "test-config-"
-  image_id = "${var.ami}"
+  image_id = "ami-c481fad3" # amzn
   instance_type = "t2.micro"
-  user_data = "${file("lib/user_data.sh")}"
+  user_data = "${file("user_data.sh")}"
   security_groups = ["${aws_security_group.sg-instance.id}"]
-  key_name = "${var.key_name}"
 
   lifecycle {
     create_before_destroy = true
