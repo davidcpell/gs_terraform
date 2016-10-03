@@ -6,6 +6,7 @@ resource "aws_launch_configuration" "lc" {
   instance_type = "t2.micro"
   user_data = "${file("lib/user_data.sh")}"
   security_groups = ["${aws_security_group.sg-instance.id}"]
+  key_name = "${var.key_name}"
 
   lifecycle {
     create_before_destroy = true

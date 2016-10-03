@@ -73,6 +73,6 @@ resource "aws_security_group" "sg-db" {
   }
 
   tags {
-    Name = "test-sg-instance"
+    Name = "test-sg-db"
   }
 }
